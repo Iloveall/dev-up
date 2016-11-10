@@ -18,7 +18,6 @@
       }
     };
 
-    // vm.get = get;
     vm.loadMore = loadMore;
 
     $scope.$watch('vm.flats.params', function(data, oldData) {
@@ -27,6 +26,7 @@
       }
     }, true);
 
+
     activate();
 
     function activate() {
@@ -34,13 +34,14 @@
     }
 
     function get() {
-      // vm.flats.params._page = 1;
       vm.flats.isLoading = true;
       flats.query(vm.flats.params).$promise
         .then(function(response) {
           vm.flats.isLoading = false;
           vm.flats.isFirstLoaded = true;
           vm.flats.data = response.data;
+
+          console.log(response.headers.link);
           vm.flats.links = pagination.parse(response.headers.link);
         });
     }
@@ -53,6 +54,7 @@
           vm.flats.isLoading = false;
           vm.flats.data = vm.flats.data.concat(response.data);
           vm.flats.links = pagination.parse(response.headers.link);
+          console.log(response.headers.link);
         });
     }
 

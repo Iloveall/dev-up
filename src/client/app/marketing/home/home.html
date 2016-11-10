@@ -10,15 +10,17 @@
       infinite-scroll="vm.loadMore(vm.flats.links.next)"
       infinite-scroll-distance="0"
       infinite-scroll-disabled="(!vm.flats.links.next ||
-        vm.flats.isLoading || !vm.flats.isFirstLoaded ||
-        !vm.flats.data.length)">
+        vm.flats.isLoading || !vm.flats.isFirstLoaded)">
 
         <div ng-repeat="flat in vm.flats.data">
 
-          <div class="clearfix"
+          <div class="clearfix visible-md visible-lg"
             ng-if="$index % 4 == 0"></div>
 
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 home-page__flat">
+          <div class="clearfix visible-sm"
+            ng-if="$index % 3 == 0"></div>
+
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 home-page__flat">
 
               <card flat="flat"></card>
 
