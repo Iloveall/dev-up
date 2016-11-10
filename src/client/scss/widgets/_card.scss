@@ -1,0 +1,47 @@
+.card {
+  padding: 5px;
+
+  border: 1px solid $grey;
+
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  &__text {
+    margin-bottom: 5px;
+
+    color: $black;
+    font-size: 14px;
+    font-weight: 300;
+
+    text-align: right;
+
+
+    &--country {
+      font-size: 16px;
+      font-weight: 400;
+      color: #8e44ad;
+    }
+
+    &--cost {
+      font-size: 16px;
+      font-weight: 400;
+      color: $green;
+    }
+
+    &--long-term {
+      font-size: 12px;
+      font-weight: 400;
+      color: $black;
+    }
+
+    &--description {
+      text-align: left;
+      line-height: normal;
+    }
+  }
+}

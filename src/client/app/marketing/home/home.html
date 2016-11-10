@@ -1,0 +1,32 @@
+<section class="container home-page">
+
+  <div class="home-page__filter">
+    <filter-panel filters="vm.flats.params"
+      defaults="vm.flats.defaults"></filter-panel>
+  </div>
+
+  <div class="home-page__flats">
+    <div class="row"
+      infinite-scroll="vm.loadMore(vm.flats.links.next)"
+      infinite-scroll-distance="0"
+      infinite-scroll-disabled="(!vm.flats.links.next ||
+        vm.flats.isLoading || !vm.flats.isFirstLoaded ||
+        !vm.flats.data.length)">
+
+        <div ng-repeat="flat in vm.flats.data">
+
+          <div class="clearfix"
+            ng-if="$index % 4 == 0"></div>
+
+            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 home-page__flat">
+
+              <card flat="flat"></card>
+
+            </div>
+        </div>
+
+
+    </div>
+  </div>
+
+</section>

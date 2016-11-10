@@ -1,0 +1,28 @@
+.filter-panel {
+  @include border-radius(3px 3px 0 0);
+
+  padding: 5px;
+
+  background: $purple;
+
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  &__item {
+    float: left;
+    margin-right: 3px;
+
+    color: #fff;
+
+    &--right15 {
+      margin-right: 15px;
+    }
+  }
+
+  &__item-label {
+    margin-right: 5px;
+  }
+}

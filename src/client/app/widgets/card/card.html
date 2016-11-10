@@ -1,0 +1,28 @@
+<div class="card">
+  <div ng-if="::$ctrl.flat.photos.length" uib-carousel active="0"
+    interval="5000" no-wrap="false">
+    <div uib-slide ng-repeat="photo in $ctrl.flat.photos track by $index"
+      index="::$index">
+        <img ng-src="{{ ::photo }}"
+          style="margin:auto;">
+    </div>
+  </div>
+
+  <img class="img-responsive"
+    ng-if="::!$ctrl.flat.photos.length"
+    ng-src="images/nophoto.png"
+    style="margin:auto;">
+
+  <p class="card__text card__text--country"
+    ng-bind="::$ctrl.flat.location"></p>
+  <p class="card__text card__text--cost">
+    $ <span ng-bind="::$ctrl.flat.cost"></span>
+  </p>
+  <p class="card__text card__text--long-term" ng-if="::$ctrl.flat.longTerm">
+    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    Long term
+  </p>
+  <p class="card__text card__text--description" ng-if="::$ctrl.flat.longTerm">
+    <span ng-bind="::$ctrl.flat.description "></span>
+  </p>
+</div>

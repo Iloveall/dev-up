@@ -1,0 +1,34 @@
+@import "compass/css3/user-interface";
+
+input {
+  &:focus,&:active {
+    border: none;
+    outline: none;
+  }
+}
+
+input[type="text"] {
+  @include input-placeholder {
+    color: #bfbfbf;
+    font-size: 13px;
+    font-weight: 300;
+  }
+}
+
+.form {
+  &__label {
+    font-size: 13px;
+    font-weight: 300;
+  }
+  &__input {
+    @include border-radius(3px);
+
+    padding: 5px 3px;
+    border: none;
+
+    color: $black;
+    font-size: 13px;
+    font-weight: 300;
+
+  }
+}
