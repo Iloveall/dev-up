@@ -1,9 +1,12 @@
+#Install system packages
+1) gem install compass
+
 #Install packages
-1) npm install
-2) bower install
+2) npm install
+3) bower install
 
 #Start frontend
-3) gulp
+4) gulp
 
 #Start server
-4) json-server db.js
+5) json-server db.js

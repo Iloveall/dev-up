@@ -23,7 +23,6 @@ var gulp = require('gulp'),
 		gutil = require('gulp-util'),
 		rimraf = require('rimraf'),
 		revOutdated = require('gulp-rev-outdated'),
-		path = require('path'),
 		through = require('through2');
 
 
